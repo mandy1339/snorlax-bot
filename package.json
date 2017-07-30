@@ -1,0 +1,16 @@
+{
+  "name": "snorlax-bot",
+  "version": "1.0.0",
+  "description": "alert when snorlax is nearby",
+  "main": "core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodejs core.js"
+  },
+  "keywords": [
+    "snorlax",
+    "twitter"
+  ],
+  "author": "Armando L. Toledo",
+  "license": "ISC"
+}
