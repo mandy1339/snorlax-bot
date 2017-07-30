@@ -12,5 +12,9 @@
     "twitter"
   ],
   "author": "Armando L. Toledo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.81.0",
+    "twit": "^2.2.9"
+  }
 }
