@@ -10,7 +10,9 @@ var Twit = require('twit');               //import package twit
 var T = new Twit(config);                 //make twitter object
 var stream = T.stream('user');      //make user stream object
 var request = require('request');         //import package request
-     
+var express = require('express');         //import package express
+var app = express();                      //make express object
+var path    = require("path");     
 
 //DECLARE SOME VARIABLES
 var areTheyOn = undefined;  //boolean
@@ -31,6 +33,22 @@ var areTheyOn = undefined;  //boolean
 //areLightsOn();
 
 
+
+//SET UP A SERVER WITH EXPRESS
+
+app.set('port', (process.env.PORT || 5000));    //set port
+
+app.use(express.static(__dirname + '/public')); //serve resouces
+//Store all HTML files in view folder.
+
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
+
+app.listen(app.get('port'), function() {
+   console.log('Node app is running on port', app.get('port'));
+});
 
 
 
