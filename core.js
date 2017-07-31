@@ -1,11 +1,15 @@
 //Author: Armando L. Toledo
 //Last updated: 07/31/2017
 
-var request = require('request');         //import package request
+
+
+
+
 var config = require('./config');         //import file config
 var Twit = require('twit');               //import package twit
-var twitter = new Twit(config);           //make twitter object
-var stream = new twitter.stream('user');  //make user stream object
+var T = new Twit(config);                 //make twitter object
+var stream = T.stream('user');      //make user stream object
+var request = require('request');         //import package request
      
 
 //DECLARE SOME VARIABLES
@@ -141,7 +145,7 @@ function snorlaxLightAlert() {
 }
 
 function alertIfSnorlax() {
-  twitter.get('statuses/user_timeline', {screen_name: "PGANVACentralCh", count: 1}, function(err, data, response){
+  T.get('statuses/user_timeline', {screen_name: "PGANVACentralCh", count: 1}, function(err, data, response){
     for(i = 0; i < data.length; i++) {
       console.log(data[i].text, '\n\n');
       if(data[i].text.toLowerCase().includes('snorlax')) {
