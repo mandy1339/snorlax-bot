@@ -1,10 +1,12 @@
 //Author: Armando L. Toledo
 //Last updated: 07/31/2017
 
-var config = require('./config');
-var Twit = require('twit');
-twitter = new Twit(config);
-var request = require('request');
+var request = require('request');         //import package request
+var config = require('./config');         //import file config
+var Twit = require('twit');               //import package twit
+var twitter = new Twit(config);           //make twitter object
+var stream = new twitter.stream('user');  //make user stream object
+     
 
 //DECLARE SOME VARIABLES
 var areTheyOn = undefined;  //boolean
