@@ -1,3 +1,5 @@
+//Author: Armando L. Toledo
+//Last updated: 07/31/2017
 
 var config = require('./config');
 var Twit = require('twit');
