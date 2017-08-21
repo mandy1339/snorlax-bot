@@ -4,6 +4,9 @@
 
 
 
+require('dotenv').config();		  //import dotenv for env vars
+console.log(process.env.consumer_key);
+
 
 var config = require('./config');         //import file config
 var Twit = require('twit');               //import package twit
